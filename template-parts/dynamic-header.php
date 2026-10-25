@@ -33,8 +33,8 @@ if ( $header_logo ) {
 	$header_logo_type = 'logo';
 }
 ?>
-<header id="site-header" class="site-header dynamic-header <?php echo esc_attr( $header_class ); ?>">
-	<div class="header-inner">
+<header id="hm-site-header" class="hm-site-header dynamic-header <?php echo esc_attr( $header_class ); ?>">
+	<div class="hm-header-inner">
 		<div class="site-branding show-<?php echo esc_attr( $header_logo_type ); ?>">
 			<?php if ( $header_logo && ( 'title' !== $header_logo_type || $is_editor ) ) : ?>
 				<div class="site-logo <?php echo esc_attr( themeic_hello_motion_show_or_hide( 'hello_header_logo_display' ) ); ?>">

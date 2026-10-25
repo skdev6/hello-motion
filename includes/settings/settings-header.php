@@ -101,7 +101,7 @@ class Settings_Header extends Tab_Base {
 					],
 				],
 				'toggle' => false,
-				'selector' => '.site-header',
+				'selector' => '.hm-site-header',
 				'default' => 'default',
 				'separator' => 'before',
 			]
@@ -138,7 +138,7 @@ class Settings_Header extends Tab_Base {
 					'hello_header_logo_display' => 'yes',
 				],
 				'selectors' => [
-					'.site-header .site-branding' => '{{VALUE}}',
+					'.hm-site-header .site-branding' => '{{VALUE}}',
 				],
 			]
 		);
@@ -165,7 +165,7 @@ class Settings_Header extends Tab_Base {
 					'hello_header_logo_display' => 'yes',
 				],
 				'selectors' => [
-					'.site-header .site-branding' => 'gap: {{SIZE}}{{UNIT}};',
+					'.hm-site-header .site-branding' => 'gap: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -179,7 +179,7 @@ class Settings_Header extends Tab_Base {
 					'boxed' => esc_html__( 'Boxed', 'hello-motion' ),
 					'full-width' => esc_html__( 'Full Width', 'hello-motion' ),
 				],
-				'selector' => '.site-header',
+				'selector' => '.hm-site-header',
 				'default' => 'boxed',
 				'separator' => 'before',
 			]
@@ -206,7 +206,7 @@ class Settings_Header extends Tab_Base {
 					'hello_header_width' => 'boxed',
 				],
 				'selectors' => [
-					'.site-header .header-inner' => 'width: {{SIZE}}{{UNIT}}; max-width: 100%;',
+					'.hm-site-header .hm-header-inner' => 'width: {{SIZE}}{{UNIT}}; max-width: 100%;',
 				],
 			]
 		);
@@ -232,7 +232,7 @@ class Settings_Header extends Tab_Base {
 					],
 				],
 				'selectors' => [
-					'.site-header' => 'padding-inline-end: {{SIZE}}{{UNIT}}; padding-inline-start: {{SIZE}}{{UNIT}}',
+					'.hm-site-header' => 'padding-inline-end: {{SIZE}}{{UNIT}}; padding-inline-start: {{SIZE}}{{UNIT}}',
 				],
 				'conditions' => [
 					'relation' => 'and',
@@ -254,7 +254,7 @@ class Settings_Header extends Tab_Base {
 				'label' => esc_html__( 'Background', 'hello-motion' ),
 				'types' => [ 'classic', 'gradient' ],
 				'separator' => 'before',
-				'selector' => '.site-header',
+				'selector' => '.hm-site-header',
 			]
 		);
 
@@ -350,7 +350,7 @@ class Settings_Header extends Tab_Base {
 					'hello_header_logo_type' => 'logo',
 				],
 				'selectors' => [
-					'.site-header .site-branding .site-logo img' => 'width: {{SIZE}}{{UNIT}}; max-width: {{SIZE}}{{UNIT}}',
+					'.hm-site-header .site-branding .site-logo img' => 'width: {{SIZE}}{{UNIT}}; max-width: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -364,7 +364,7 @@ class Settings_Header extends Tab_Base {
 					'hello_header_logo_display' => 'yes',
 					'hello_header_logo_type' => 'title',
 				],
-				'selector' => '.site-header .site-title',
+				'selector' => '.hm-site-header .site-title',
 			]
 		);
 
@@ -377,7 +377,7 @@ class Settings_Header extends Tab_Base {
 					'hello_header_logo_display' => 'yes',
 					'hello_header_logo_type' => 'title',
 				],
-				'selector' => '.site-header .site-title a',
+				'selector' => '.hm-site-header .site-title a',
 			]
 		);
 
@@ -390,7 +390,7 @@ class Settings_Header extends Tab_Base {
 					'hello_header_logo_display' => 'yes',
 					'hello_header_logo_type' => 'title',
 				],
-				'selector' => '.site-header .site-title a',
+				'selector' => '.hm-site-header .site-title a',
 			]
 		);
 
@@ -417,7 +417,7 @@ class Settings_Header extends Tab_Base {
 					'hello_header_logo_type' => 'title',
 				],
 				'selectors' => [
-					'.site-header .site-title a' => 'color: {{VALUE}};',
+					'.hm-site-header .site-title a' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -445,7 +445,7 @@ class Settings_Header extends Tab_Base {
 					'hello_header_logo_type' => 'title',
 				],
 				'selectors' => [
-					'.site-header .site-title a:hover' => 'color: {{VALUE}};',
+					'.hm-site-header .site-title a:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -460,7 +460,7 @@ class Settings_Header extends Tab_Base {
 					'unit' => 's',
 				],
 				'selectors' => [
-					'.site-header .site-title a' => 'transition-duration: {{SIZE}}{{UNIT}};',
+					'.hm-site-header .site-title a' => 'transition-duration: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -515,7 +515,7 @@ class Settings_Header extends Tab_Base {
 					'hello_header_tagline_display' => 'yes',
 				],
 				'selectors' => [
-					'.site-header .site-description' => 'color: {{VALUE}};',
+					'.hm-site-header .site-description' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -528,7 +528,7 @@ class Settings_Header extends Tab_Base {
 				'condition' => [
 					'hello_header_tagline_display' => 'yes',
 				],
-				'selector' => '.site-header .site-description',
+				'selector' => '.hm-site-header .site-description',
 			]
 		);
 
@@ -540,7 +540,7 @@ class Settings_Header extends Tab_Base {
 				'condition' => [
 					'hello_header_tagline_display' => 'yes',
 				],
-				'selector' => '.site-header .site-description',
+				'selector' => '.hm-site-header .site-description',
 			]
 		);
 
@@ -651,7 +651,7 @@ class Settings_Header extends Tab_Base {
 					'type' => Controls_Manager::SELECT,
 					'default' => 'tablet',
 					'options' => $dropdown_options,
-					'selector' => '.site-header',
+					'selector' => '.hm-site-header',
 					'condition' => [
 						'hello_header_menu_layout!' => 'dropdown',
 					],
@@ -667,8 +667,8 @@ class Settings_Header extends Tab_Base {
 						'hello_header_menu_display' => 'yes',
 					],
 					'selectors' => [
-						'.site-header .site-navigation ul.menu > li > a' => 'color: {{VALUE}};',
-						'.site-header .site-navigation ul.menu > li.menu-item-has-children::after' => 'color: {{VALUE}};',
+						'.hm-site-header .site-navigation ul.menu > li > a' => 'color: {{VALUE}};',
+						'.hm-site-header .site-navigation ul.menu > li.menu-item-has-children::after' => 'color: {{VALUE}};',
 					],
 				]
 			);
@@ -682,7 +682,7 @@ class Settings_Header extends Tab_Base {
 						'hello_header_menu_display' => 'yes',
 					],
 					'selectors' => [
-						'.site-header .site-navigation-toggle .site-navigation-toggle-icon' => 'color: {{VALUE}};',
+						'.hm-site-header .site-navigation-toggle .site-navigation-toggle-icon' => 'color: {{VALUE}};',
 					],
 				]
 			);
@@ -696,7 +696,7 @@ class Settings_Header extends Tab_Base {
 						'hello_header_menu_display' => 'yes',
 					],
 					'selectors' => [
-						'.site-header .site-navigation-toggle' => 'background-color: {{VALUE}};',
+						'.hm-site-header .site-navigation-toggle' => 'background-color: {{VALUE}};',
 					],
 				]
 			);
@@ -709,7 +709,7 @@ class Settings_Header extends Tab_Base {
 					'condition' => [
 						'hello_header_menu_display' => 'yes',
 					],
-					'selector' => '.site-header .site-navigation .menu li',
+					'selector' => '.hm-site-header .site-navigation .menu li',
 				]
 			);
 
@@ -721,7 +721,7 @@ class Settings_Header extends Tab_Base {
 					'condition' => [
 						'hello_header_menu_display' => 'yes',
 					],
-					'selector' => '.site-header .site-navigation .menu li',
+					'selector' => '.hm-site-header .site-navigation .menu li',
 				]
 			);
 		}

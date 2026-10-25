@@ -20,7 +20,7 @@ $header_nav_menu = wp_nav_menu( [
 $header_logo = themeic_hello_motion_get_header_logo_html( $site_name );
 ?>
 
-<header id="site-header" class="site-header">
+<header id="hm-site-header" class="hm-site-header">
 
 	<div class="site-branding">
 		<?php
