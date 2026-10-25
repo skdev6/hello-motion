@@ -145,12 +145,6 @@ add_action( 'elementor/editor/after_enqueue_scripts', function() {
 		true
 	);
 
-	wp_enqueue_style(
-		'themeic-hello-motion-editor-style',
-		THEMEIC_HELLO_MOTION_STYLE_URL . 'editor.css',
-		[],
-		THEMEIC_HELLO_MOTION_VERSION
-	);
 } );
 
 add_action( 'wp_enqueue_scripts', function() {
@@ -215,12 +209,7 @@ add_action( 'elementor/experiments/default-features-registered', function( \Elem
 		'name' => 'hello-theme-header-footer',
 		'title' => esc_html__( 'Header & Footer', 'hello-motion' ),
 		'tag' => esc_html__( 'Hello Motion', 'hello-motion' ),
-		'description' => sprintf(
-			'%1$s <a href="%2$s" target="_blank">%3$s</a>',
-			esc_html__( 'Customize and style the builtin Hello Motion’s cross-site header & footer from the Elementor "Site Settings" panel.', 'hello-motion' ),
-			'https://go.elementor.com/wp-dash-header-footer',
-			esc_html__( 'Learn More', 'hello-motion' )
-		),
+		'description' => esc_html__( 'Customize and style the built-in Hello Motion header and footer from Elementor Site Settings.', 'hello-motion' ),
 		'release_status' => $experiments_manager::RELEASE_STATUS_STABLE,
 		'new_site' => [
 			'minimum_installation_version' => '3.3.0',

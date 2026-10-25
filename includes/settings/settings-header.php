@@ -82,25 +82,6 @@ class Settings_Header extends Tab_Base {
 		);
 
 		$this->add_control(
-			'hello_header_disable_note',
-			[
-				'type' => Controls_Manager::ALERT,
-				'alert_type' => 'warning',
-				'content' => sprintf(
-					/* translators: %s: Link that opens the theme settings page. */
-					__( 'Note: Hiding all the elements, only hides them visually. To disable them completely go to <a href="%s">Theme Settings</a> .', 'hello-motion' ),
-					admin_url( 'admin.php?page=themeic-hello-motion-settings' )
-				),
-				'render_type' => 'ui',
-				'condition' => [
-					'hello_header_logo_display' => '',
-					'hello_header_tagline_display' => '',
-					'hello_header_menu_display' => '',
-				],
-			]
-		);
-
-		$this->add_control(
 			'hello_header_layout',
 			[
 				'type' => Controls_Manager::CHOOSE,
@@ -759,34 +740,6 @@ class Settings_Header extends Tab_Base {
 	}
 
 	public function get_additional_tab_content() {
-		$content_template = '
-			<div class="hello-motion elementor-nerd-box">
-				<img src="%1$s" class="elementor-nerd-box-icon" alt="%2$s">
-				<p class="elementor-nerd-box-title">%3$s</p>
-				<p class="elementor-nerd-box-message">%4$s</p>
-				<a class="elementor-nerd-box-link elementor-button go-pro" target="_blank" href="%5$s">%6$s</a>
-			</div>';
-
-		if ( ! defined( 'ELEMENTOR_PRO_VERSION' ) ) {
-			return sprintf(
-				$content_template,
-				get_template_directory_uri() . '/assets/images/go-pro.svg',
-				esc_attr__( 'Get Elementor Pro', 'hello-motion' ),
-				esc_html__( 'Create custom headers', 'hello-motion' ),
-				esc_html__( 'Add mega menus, search bars, login buttons and more with Elementor Pro.', 'hello-motion' ),
-				'https://go.elementor.com/hello-theme-header/',
-				esc_html__( 'Upgrade Now', 'hello-motion' )
-			);
-		} else {
-			return sprintf(
-				$content_template,
-				get_template_directory_uri() . '/assets/images/go-pro.svg',
-				esc_attr__( 'Elementor Pro', 'hello-motion' ),
-				esc_html__( 'Create a custom header with the Theme Builder', 'hello-motion' ),
-				esc_html__( 'With the Theme Builder you can jump directly into each part of your site', 'hello-motion' ),
-				get_admin_url( null, 'admin.php?page=elementor-app#/site-editor/templates/header' ),
-				esc_html__( 'Create Header', 'hello-motion' )
-			);
-		}
+		return '';
 	}
 }

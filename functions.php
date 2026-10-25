@@ -12,16 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'THEMEIC_HELLO_MOTION_VERSION', '1.0.0' );
 define( 'THEMEIC_HELLO_MOTION_SLUG', 'themeic-hello-motion' );
 
-define( 'THEMEIC_HELLO_MOTION_PATH', get_template_directory() );
 define( 'THEMEIC_HELLO_MOTION_URL', get_template_directory_uri() );
-define( 'THEMEIC_HELLO_MOTION_ASSETS_PATH', THEMEIC_HELLO_MOTION_PATH . '/assets/' );
 define( 'THEMEIC_HELLO_MOTION_ASSETS_URL', THEMEIC_HELLO_MOTION_URL . '/assets/' );
-define( 'THEMEIC_HELLO_MOTION_SCRIPTS_PATH', THEMEIC_HELLO_MOTION_ASSETS_PATH . 'js/' );
 define( 'THEMEIC_HELLO_MOTION_SCRIPTS_URL', THEMEIC_HELLO_MOTION_ASSETS_URL . 'js/' );
-define( 'THEMEIC_HELLO_MOTION_STYLE_PATH', THEMEIC_HELLO_MOTION_ASSETS_PATH . 'css/' );
 define( 'THEMEIC_HELLO_MOTION_STYLE_URL', THEMEIC_HELLO_MOTION_ASSETS_URL . 'css/' );
-define( 'THEMEIC_HELLO_MOTION_IMAGES_PATH', THEMEIC_HELLO_MOTION_ASSETS_PATH . 'images/' );
-define( 'THEMEIC_HELLO_MOTION_IMAGES_URL', THEMEIC_HELLO_MOTION_ASSETS_URL . 'images/' );
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 800; // Pixels.
@@ -34,10 +28,6 @@ if ( ! function_exists( 'themeic_hello_motion_setup' ) ) {
 	 * @return void
 	 */
 	function themeic_hello_motion_setup() {
-		if ( is_admin() ) {
-			themeic_hello_motion_maybe_update_theme_version_in_db();
-		}
-
 		if ( apply_filters( 'themeic_hello_motion_register_menus', true ) ) {
 			register_nav_menus( [ 'menu-1' => esc_html__( 'Header', 'hello-motion' ) ] );
 			register_nav_menus( [ 'menu-2' => esc_html__( 'Footer', 'hello-motion' ) ] );
@@ -100,17 +90,6 @@ if ( ! function_exists( 'themeic_hello_motion_setup' ) ) {
 	}
 }
 add_action( 'after_setup_theme', 'themeic_hello_motion_setup' );
-
-function themeic_hello_motion_maybe_update_theme_version_in_db() {
-	$theme_version_option_name = 'themeic_hello_motion_version';
-	// The theme version saved in the database.
-	$themeic_hello_motion_db_version = get_option( $theme_version_option_name );
-
-	// If the 'themeic_hello_motion_version' option does not exist in the DB, or the version needs to be updated, do the update.
-	if ( ! $themeic_hello_motion_db_version || version_compare( $themeic_hello_motion_db_version, THEMEIC_HELLO_MOTION_VERSION, '<' ) ) {
-		update_option( $theme_version_option_name, THEMEIC_HELLO_MOTION_VERSION );
-	}
-}
 
 if ( ! function_exists( 'themeic_hello_motion_display_header_footer' ) ) {
 	/**
@@ -189,34 +168,6 @@ if ( ! function_exists( 'themeic_hello_motion_content_width' ) ) {
 	}
 }
 add_action( 'after_setup_theme', 'themeic_hello_motion_content_width', 0 );
-
-if ( ! function_exists( 'themeic_hello_motion_add_description_meta_tag' ) ) {
-	/**
-	 * Add description meta tag with excerpt text.
-	 *
-	 * @return void
-	 */
-	function themeic_hello_motion_add_description_meta_tag() {
-		if ( ! apply_filters( 'themeic_hello_motion_description_meta_tag', true ) ) {
-			return;
-		}
-
-		if ( ! is_singular() ) {
-			return;
-		}
-
-		$post = get_queried_object();
-		if ( empty( $post->post_excerpt ) ) {
-			return;
-		}
-
-		echo '<meta name="description" content="' . esc_attr( wp_strip_all_tags( $post->post_excerpt ) ) . '">' . "\n";
-	}
-}
-add_action( 'wp_head', 'themeic_hello_motion_add_description_meta_tag' );
-
-// Settings page
-require get_template_directory() . '/includes/settings-functions.php';
 
 // Header & footer styling option, inside Elementor
 require get_template_directory() . '/includes/elementor-functions.php';
@@ -396,7 +347,3 @@ if ( ! function_exists( 'themeic_hello_motion_body_open' ) ) {
 		wp_body_open();
 	}
 }
-
-require THEMEIC_HELLO_MOTION_PATH . '/theme.php';
-
-ThemeicHelloMotion\Theme::instance();

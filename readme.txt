@@ -32,9 +32,14 @@ The theme supports common WordPress features which can be extended using a child
 Hello Motion, Copyright (c) Themeic, is distributed under the terms of the GNU General Public License v3 or later.
 
 This theme, like WordPress, is distributed under the terms of GPL.
-Use it as your springboard to building a site with ***Elementor***.
 
 Hello Motion bundles the following third-party resources:
+
+Hello Elementor theme code, Copyright Elementor
+License: GNU General Public License v3 or later
+Source: https://github.com/elementor/hello-theme
+
+Portions of Hello Motion are derived from the Hello Elementor theme and have been modified by Themeic. The original source is available at the link above.
 
 Font Awesome icons for theme screenshot
 License: SIL Open Font License, version 1.1.

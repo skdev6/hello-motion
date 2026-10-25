@@ -122,39 +122,15 @@ function themeic_hello_motion_customaizer() {
 themeic_hello_motion_customaizer();
 
 /**
- * Register Customizer controls for Elementor Pro upsell.
- *
- * @return void
- */
-function themeic_hello_motion_customizer_register_pro_upsell( $wp_customize ) {
-	if ( function_exists( 'elementor_pro_load_plugin' ) ) {
-		return;
-	}
-
-	require_once get_template_directory() . '/includes/customizer/customizer-upsell.php';
-
-	$wp_customize->add_section(
-		new ThemeicHelloMotion\Includes\Customizer\Hello_Motion_Customizer_Upsell(
-			$wp_customize,
-			'themeic-hello-motion-upsell-elementor-pro',
-			[
-				'heading' => esc_html__( 'Customize your entire website with Elementor Pro', 'hello-motion' ),
-				'description' => esc_html__( 'Build and customize every part of your website, including Theme Parts with Elementor Pro.', 'hello-motion' ),
-				'button_text' => esc_html__( 'Upgrade Now', 'hello-motion' ),
-				'button_url' => 'https://elementor.com/pro/?utm_source=hello-motion-customize&utm_campaign=gopro&utm_medium=wp-dash',
-				'priority' => 999999,
-			]
-		)
-	);
-}
-add_action( 'customize_register', 'themeic_hello_motion_customizer_register_pro_upsell' );
-
-/**
  * Enqueue Customizer CSS.
  *
  * @return void
  */
-function themeic_hello_motion_customizer_styles() {
+function themeic_hello_motion_customizer_styles( $hook_suffix ) {
+	if ( 'customize.php' !== $hook_suffix ) {
+		return;
+	}
+
 	wp_enqueue_style(
 		'themeic-hello-motion-customizer',
 		THEMEIC_HELLO_MOTION_STYLE_URL . 'customizer.css',
