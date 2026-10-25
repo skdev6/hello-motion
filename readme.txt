@@ -9,17 +9,32 @@ Requires PHP: 7.4
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-A lightweight and minimalist WordPress theme for the Elementor site builder, fully compatible with the MotionUI Addons plugin.
+A lightweight and minimalist WordPress theme for the Elementor site builder, fully compatible with the MotionUI Addons for Elementor plugin.
 
 == Description ==
 
 Hello Motion is a lightweight and minimalist WordPress theme by Themeic that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website.
 
-Hello Motion is fully compatible with the **MotionUI Addons** plugin. MotionUI extends Elementor with an addon widget library, motion effects and advanced design controls, and Hello Motion provides the clean, conflict-free markup and styling those addons need to render exactly as intended. Together they let you build animated, custom layouts without writing code, while the theme stays out of the way of your design.
+Hello Motion is fully compatible with the **MotionUI Addons for Elementor** plugin. MotionUI extends Elementor with an addon widget library, motion effects and advanced design controls, and Hello Motion provides the clean, conflict-free markup and styling those addons need to render exactly as intended. Together they let you build animated, custom layouts without writing code, while the theme stays out of the way of your design.
 
 The theme's main focus is on providing a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. It is optimized for speed and performance, and its simplicity and flexibility make it a great choice for both beginners and experienced website designers.
 
 The theme supports common WordPress features which can be extended using a child-theme. In addition, there are several ways to add custom styles. It can be done from **Elementor**, using a child-theme, or with an external plugin. To customize the theme further, see the [Elementor developer documentation](https://developers.elementor.com/docs/).
+
+== Screenshots ==
+
+![Hello Motion Screenshot](assets/screenshot.png)
+
+*Screenshot of the Hello Motion theme customizer showing Header & Footer settings.*
+
+== Upgrade Notes ==
+
+= 1.0.0 =
+* Initial release of Hello Motion by Themeic.
+* Added Hooks: `hello_motion_before_content_start` and `hello_motion_after_content_end`
+* Added Footer customizer fields: menu, logo, and copyright text
+* Page header now loads from single shared `template-parts/page-header.php`
+* Footer logo and copyright now editable from Customizer
 
 == Installation ==
 
